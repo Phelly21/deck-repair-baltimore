@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://deckrepairbaltimore.com/sitemap.xml
