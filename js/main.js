@@ -1,4 +1,4 @@
-/* The Deck Repair Wizard – Cincinnati :: shared interactions */
+/* The Deck Repair Wizard – Baltimore :: shared interactions */
 (function () {
   'use strict';
 
@@ -47,7 +47,7 @@
         })
         .catch(function () {
           if (note) {
-            note.textContent = 'Sorry, something went wrong. Please call us at (513) 540-4937.';
+            note.textContent = 'Sorry, something went wrong. Please call us at (667) 239-8644.';
             note.style.color = '#a32020';
           }
           if (btn) { btn.disabled = false; }

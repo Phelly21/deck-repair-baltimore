@@ -1,5 +1,5 @@
 /* ============================================================
-   The Deck Repair Wizard – Cincinnati
+   The Deck Repair Wizard – Baltimore
    Shared stylesheet for all pages
    Palette: warm walnut wood tones + forest green accent
    ============================================================ */
@@ -257,6 +257,10 @@ a.card:hover .card-link { text-decoration: underline; }
 .layout-sidebar { display: grid; grid-template-columns: 1fr; gap: 44px; align-items: start; }
 .layout-sidebar:has(> aside) { grid-template-columns: 1.7fr 1fr; }
 .layout-sidebar aside { position: sticky; top: 96px; }
+/* grid items default to min-width:auto — without this, a wide .data-table
+   stretches the column instead of scrolling inside its .table-wrap */
+.layout-sidebar > * { min-width: 0; }
+.prose { min-width: 0; }
 .prose h2 { margin-top: 1.6rem; }
 .prose h3 { color: var(--forest); margin-top: 1.4rem; margin-bottom: .4rem; }
 .prose ul { padding-left: 20px; margin-bottom: 1rem; }
@@ -335,3 +339,19 @@ a.card:hover .card-link { text-decoration: underline; }
   .areas-chips a { font-size: .9rem; padding: 8px 13px; }
   .data-table { font-size: .92rem; }
 }
+
+/* Native <details> FAQ accordions (used site-wide) */
+.faq-item > summary {
+  list-style: none; cursor: pointer;
+  padding: 18px 22px;
+  font-family: var(--font-head); font-weight: 600; font-size: 1.05rem;
+  color: var(--walnut-dark);
+  display: flex; justify-content: space-between; align-items: center; gap: 14px;
+}
+.faq-item > summary::-webkit-details-marker { display: none; }
+.faq-item > summary::after { content: "+"; font-size: 1.5rem; color: var(--forest); flex: 0 0 auto; }
+.faq-item[open] > summary::after { content: "–"; }
+.faq-item > summary:hover { color: var(--forest); }
+.faq-item > *:not(summary) { padding: 0 22px 18px; }
+.faq-item > p { color: var(--gray); margin-bottom: 0; }
+.faq-item > ul, .faq-item > ol { margin-left: 20px; }
